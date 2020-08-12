@@ -16,8 +16,8 @@ app.engine("handlebars", exphbs({
 }));
 app.set("view engine", "handlebars");
 
-// var routes = require("./controllers/#####.js");
-// app.use(routes);
+var routes = require("./controllers/burgersController.js");
+app.use(routes);
 app.listen(PORT, function () {
   console.log("App deployed to http://localhost:" + PORT);
 });

@@ -23,25 +23,27 @@ function objToSql(ob) {
 }
 
 var orm = {
-    all: function (tableInput, cb) {
-      var queryString = "SELECT * FROM " + tableInput + ";";
-      connection.query(queryString, function (err, result) {
-        if (err) {
-          throw err;
-        }
-        cb(result);
-      });
-    },
-    create: function (table, cols, vals, cb) {
-      var queryString = "INSERT INTO " + table + " (" + cols.toString() + ") " + "VALUES (" + printQuestionMarks(vals.length) + ") ";
+  all: function (tableInput, cb) {
+    connection.query("SELECT * FROM " + tableInput + ";", function (err, result) {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
+  },
+  create: function (table, cols, vals, cb) {
+    var queryString = "INSERT INTO " + table + " (" + cols.toString() + ") " + "VALUES (" + printQuestionMarks(vals.length) + ") ";
 
-      console.log(queryString);
+    console.log(queryString);
 
-      connection.query(queryString, vals, function (err, result) {
-        if (err) {
-          throw err;
-        }
+    connection.query(queryString, vals, function (err, result) {
+      if (err) {
+        throw err;
+      }
 
-        cb(result);
-      });
-    },
+      cb(result);
+    });
+  }
+};
+
+module.exports = orm;
