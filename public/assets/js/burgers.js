@@ -1,9 +1,10 @@
 $(function () {
-  $(".change-devoured").on("click", (event) => {
-    const id = $(this).data("id");
+  $(".change-devoured").on("click", function (event) {
+    console.log($(this).data("id"));
+    var id = $(this).data("id");
     const newDevour = $(this).data("newdevour");
     const newDevourState = {
-      devour: newDevour
+      devoured: newDevour
     };
     $.ajax("/" + id, {
       type: "PUT",
@@ -19,6 +20,7 @@ $(function () {
     event.preventDefault();
     const newBurger = {
       name: $("#burger").val().trim(),
+      devoured: 0
     };
     $.ajax("/", {
       type: "POST",
@@ -30,16 +32,16 @@ $(function () {
       }
     );
   });
-  $(".delete").on("click", () => {
-    const id = $(this).data("id");
-    console.log("In Delete the id - " + id);
-    $.ajax("/" + id, {
-      type: "DELETE"
-    }).then(
-      () => {
-        console.log("deleted burger");
-        location.reload();
-      }
-    );
-  });
+  // $(".delete").on("click", () => {
+  //   const id = $(this).data("id");
+  //   console.log("In Delete the id - " + id);
+  //   $.ajax("/" + id, {
+  //     type: "DELETE"
+  //   }).then(
+  //     () => {
+  //       console.log("deleted burger");
+  //       location.reload();
+  //     }
+  //   );
+  // });
 });

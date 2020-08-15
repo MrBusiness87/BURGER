@@ -20,9 +20,10 @@ router.post("/", function (req, res) {
 });
 
 router.put("/:id", function (req, res) {
-  burger.updateOne({
-    devoured: req.body.devoured
-  }, [req.params.id], function (result) {
+
+  // console.log("THING " + req.params.id);
+  //var condition = "id = " + req.params.id;
+  burger.updateOne([req.params.id], function (result) {
     console.log(result);
     res.redirect("/");
   });
