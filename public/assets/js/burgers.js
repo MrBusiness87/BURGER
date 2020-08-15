@@ -15,7 +15,7 @@ $(function () {
       }
     );
   });
-  $(".create-form").on("submit", (event) => {
+  $(".form-group button").on("click", (event) => {
     event.preventDefault();
     const id = $(this).data("id");
     const newBurger = {
