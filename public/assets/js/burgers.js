@@ -17,11 +17,10 @@ $(function () {
   });
   $(".form-group button").on("click", (event) => {
     event.preventDefault();
-    const id = $(this).data("id");
     const newBurger = {
       name: $("#burger").val().trim(),
     };
-    $.ajax("/", id, {
+    $.ajax("/", {
       type: "POST",
       data: newBurger
     }).then(
@@ -31,10 +30,7 @@ $(function () {
       }
     );
   });
-});
-
-$(function () {
-  $(".delete").on("click", (event) => {
+  $(".delete").on("click", () => {
     const id = $(this).data("id");
     console.log("In Delete the id - " + id);
     $.ajax("/" + id, {

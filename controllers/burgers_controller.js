@@ -11,19 +11,29 @@ router.get("/", function (req, res) {
     });
   });
 });
-
+// console.log("THING");
 router.post("/", function (req, res) {
-  burger.insertOne(req.body.name, function (result) {
+  burger.insertOne(["name"], [req.body.name], function (result) {
     console.log(result);
     res.redirect("/");
   });
 });
 
 router.put("/:id", function (req, res) {
-  burger.updateOne(req.params.id, function (result) {
+  burger.updateOne({
+    devoured: req.body.devoured
+  }, [req.params.id], function (result) {
     console.log(result);
     res.redirect("/");
   });
 });
 
 module.exports = router;
+
+
+// {
+//   highest_bid: answer.bid
+// },
+// {
+//   id: chosenItem.id
+// }
