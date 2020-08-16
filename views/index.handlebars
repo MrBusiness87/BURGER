@@ -1,4 +1,5 @@
 <div class="burger container">
+  <br><br><br>
   <div class="title">
     <h1 class="display-4">Eat the Burgers!</h1>
   </div>
@@ -8,12 +9,12 @@
       <ul>
         {{#each burger}}
         {{#unless devoured}}
-        <li>
+        <p>
           {{name}}
           <button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
             {{#unless devoured}}Eat! {{/unless}}
           </button>
-        </li>
+        </p>
         {{/unless}}
         {{/each}}
       </ul>
@@ -23,12 +24,12 @@
       <ul>
         {{#each burger}}
         {{#if devoured}}
-        <li>
+        <p>
           {{name}}
-          {{!-- <button class="delete" data-id="{{id}}">
+          <button class="delete" data-id="{{id}}">
             {{#if devoured}}Delete {{/if}}
-          </button> --}}
-        </li>
+          </button>
+        </p>
         {{/if}}
         {{/each}}
       </ul>

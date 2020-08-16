@@ -20,7 +20,6 @@ router.post("/", function (req, res) {
 });
 
 router.put("/:id", function (req, res) {
-
   // console.log("THING " + req.params.id);
   //var condition = "id = " + req.params.id;
   burger.updateOne([req.params.id], function (result) {
@@ -29,12 +28,11 @@ router.put("/:id", function (req, res) {
   });
 });
 
+router.delete("/:id", function (req, res) {
+  burger.deleteOne([req.params.id], function (result) {
+    console.log(result);
+    res.redirect("/");
+  });
+});
+
 module.exports = router;
-
-
-// {
-//   highest_bid: answer.bid
-// },
-// {
-//   id: chosenItem.id
-// }

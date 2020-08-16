@@ -1,13 +1,25 @@
+* {
+  color: white;
+}
+
+body {
+  background-image: url(../img/Burger-Restaurant-Backgrounds.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 1000px;
+}
+
 .title {
-  margin: 10px;
+  /* padding-top: 60px; */
   text-align: center;
   font-size: 40px;
 }
 
-li {
+p {
   padding: 5px;
   margin: 5px;
   font-size: 20px;
+  text-align: center;
 }
 
 h2 {
@@ -26,8 +38,13 @@ h2 {
 .delete,
 .add {
   margin-left: 10px;
+  color: black;
 }
 
 #add {
   font-size: 20px;
+}
+
+input {
+  color: black;
 }
