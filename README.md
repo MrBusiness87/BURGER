@@ -2,8 +2,8 @@
 
 ## README created by: MrBusiness87
 
-![GIF](#link for GIF#)
-[Video LINK](#link to website video#)
+[GIF LINK](https://drive.google.com/file/d/1_lkyYgq4aS0T46AKN-JDliJpQM-noN6F/view?usp=sharing)<br>
+[Video LINK](https://drive.google.com/file/d/1VOBV6QY-TrJbd4AamQFTT2uQHW5XSKgx/view)
 
 ---
 
