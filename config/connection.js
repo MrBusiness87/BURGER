@@ -1,5 +1,4 @@
 var mysql = require("mysql");
-require('custom-env').env()
 
 var connection = mysql.createConnection({
   host: "localhost",
